@@ -15,6 +15,7 @@ function api_call() {
   var req = new XMLHttpRequest();
   req.open("POST", "https://iam.cloud.ibm.com/identity/token", false);
   req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  req.setRequestHeader("Access-Control-Allow-Origin", "*");
   req.send(postbody);
   if (req.status == 200) {
     message.innerHTML = req.responseText;
