@@ -17,6 +17,7 @@ function api_call() {
   req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   req.setRequestHeader("Access-Control-Allow-Origin", "*");
   req.send(postbody);
+  console.log(req)
   if (req.status == 200) {
     message.innerHTML = req.responseText;
   }
