@@ -53,7 +53,7 @@ function api_call() {
 
     const res = await fetch("https://iam.cloud.ibm.com/identity/token", {
       method: "POST",
-      mode: "cors",
+      mode: "no-cors",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: data,
     });
