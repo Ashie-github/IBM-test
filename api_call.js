@@ -57,6 +57,6 @@ function api_call() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: data,
     });
-    const jsonResult = await res;
+    const jsonResult = res;
     console.log(jsonResult);
 }
