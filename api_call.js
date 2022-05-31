@@ -1,4 +1,4 @@
-function api_call() {
+asunc function api_call() {
   
   // XML //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   const message = document.getElementById("message");
@@ -27,36 +27,36 @@ function api_call() {
   // XML POSTMAN //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // WARNING: For POST requests, body is set to null by browsers.
 
-    var data =
-      "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=VXrWITZG8dZYnY7ahWdhfjrWRkPELL1mAo0HC1tHWdWI";
-
-    console.log(data);
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-        console.log(this.responseText);
-      }
-    });
-
-    xhr.open("POST", "https://iam.cloud.ibm.com/identity/token");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-
-    xhr.send(data);
-
-  
-  // FETCH //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //     var data =
 //       "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=VXrWITZG8dZYnY7ahWdhfjrWRkPELL1mAo0HC1tHWdWI";
 
-//     const res = await fetch("https://iam.cloud.ibm.com/identity/token", {
-//       method: "POST",
-//       mode: "no-cors",
-//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//       body: data,
+//     console.log(data);
+//     var xhr = new XMLHttpRequest();
+//     xhr.withCredentials = false;
+
+//     xhr.addEventListener("readystatechange", function () {
+//       if (this.readyState === 4) {
+//         console.log(this.responseText);
+//       }
 //     });
-//     const jsonResult = await res;
-//     console.log(jsonResult);
+
+//     xhr.open("POST", "https://iam.cloud.ibm.com/identity/token");
+//     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//     xhr.setRequestHeader("Access-Control-Allow-Origin", "https://iam.cloud.ibm.com");
+
+//     xhr.send(data);
+
+  
+  // FETCH //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var data =
+      "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=VXrWITZG8dZYnY7ahWdhfjrWRkPELL1mAo0HC1tHWdWI";
+
+    const res = await fetch("https://iam.cloud.ibm.com/identity/token", {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data,
+    });
+    const jsonResult = await res;
+    console.log(jsonResult);
 }
