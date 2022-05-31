@@ -1,4 +1,4 @@
-function api_call() {
+async function api_call() {
   
   // XML //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   const message = document.getElementById("message");
@@ -51,12 +51,12 @@ function api_call() {
     var data =
       "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=VXrWITZG8dZYnY7ahWdhfjrWRkPELL1mAo0HC1tHWdWI";
 
-    const res = fetch("https://iam.cloud.ibm.com/identity/token", {
+    const res = await fetch("https://iam.cloud.ibm.com/identity/token", {
       method: "POST",
       mode: "cors",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "application/x-www-form-urlencoded", "Access-Control-Allow-Origin": "https://iam.cloud.ibm.com"},
       body: data,
     });
-    const jsonResult = res;
+    const jsonResult = await res;
     console.log(jsonResult);
 }
