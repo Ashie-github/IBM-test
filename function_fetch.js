@@ -1,6 +1,7 @@
 function api_call() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+  myHeaders.append("Access-Control-Allow-Origin", "*");
 
   var urlencoded = new URLSearchParams();
   urlencoded.append("grant_type", "urn:ibm:params:oauth:grant-type:apikey");
