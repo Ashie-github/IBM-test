@@ -15,6 +15,7 @@ function api_call() {
 
   xhr.open("POST", "https://iam.cloud.ibm.com/identity/token");
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
   xhr.send(data);
 }
